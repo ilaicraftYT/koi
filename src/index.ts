@@ -12,8 +12,4 @@ Koi - Complement for discord.js
         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
         GNU Affero General Public License for more details.
 */
-import Discord from "discord.js";
-
-class Koi {
-
-}
+export * from "./modules/main";
