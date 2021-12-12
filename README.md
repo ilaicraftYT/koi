@@ -1,2 +1,2 @@
-# mydiscord
+# koi
 Another discord.js complement.
