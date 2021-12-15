@@ -12,16 +12,16 @@ Koi - Complement for discord.js
         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
         GNU Affero General Public License for more details.
 */
-import { KoiException } from '../../error/KoiError';
+import { KoiException } from "../../error/KoiError"
 
 export function clap(str: string, max?: number): string{
     const a: Array<string> = str.split(" ")
 
     if(!max) max = 20
-    // @ts-ignore - As we use an conditional to define the max length, we need to ignore the type checker
-    a.forEach((v, k) =>  { v.length > max ? a[k] = v.substr(0, max) : v = v})
+    // @ts-expect-error: As the conditional above sets it, we need to ignore type checker
+    a.forEach((v, k) => { v.length > max ? a[k] = v.substr(0, max) : v })
 
     if(a.length < 2) throw new KoiException("Clap function needs at least 2 words")
     const b: string = a.join(" 👏 ")
-    return b;
+    return b
 }
